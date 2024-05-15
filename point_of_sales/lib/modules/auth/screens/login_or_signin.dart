@@ -86,7 +86,6 @@ class _LoginOrSigingState extends State<LoginOrSigin> {
                                   borderColor: ConstApp.colors().blue),
                               onPressed: () async {
                                 await Navigator.pushNamed(context, "/login");
-                                print(123);
                               },
                               child: Text(lang("Log in"),
                                   style: TextStyle(
