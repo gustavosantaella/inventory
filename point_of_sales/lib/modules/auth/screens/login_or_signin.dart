@@ -5,6 +5,7 @@ import 'package:point_of_sales/config/constants.dart';
 import 'package:point_of_sales/helpers/lang.dart';
 import 'package:point_of_sales/helpers/styles/button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:point_of_sales/widgets/line.dart';
 
 class LoginOrSigin extends StatefulWidget {
   const LoginOrSigin({super.key});
@@ -52,7 +53,18 @@ class _LoginOrSigingState extends State<LoginOrSigin> {
                       const SizedBox(height: 40),
                       Text(
                         "${lang("Easy Management for your Store")}.",
-                        style: TextStyle(color: ConstApp.colors().black1),
+                        style: TextStyle(
+                            color: ConstApp.colors().black1,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(height: 20),
+                      Wrap(
+                        spacing: 10,
+                        children: [
+                          line(color: ConstApp.colors().blue),
+                          line(),
+                          line(),
+                        ],
                       ),
                       const SizedBox(height: 88),
                       SizedBox(

@@ -4,7 +4,7 @@ String lang(String key, {String? lang}) {
   String l = lang ?? ConstApp.lang.defaultLang;
   Map<String, Map<String, String>> map = {
     "es": {
-      "Easy Management for your Store": "Facil de manejar para tu local ",
+      "Easy Management for your Store": "Facil de manejar para tu local",
       "Log in as Owner": "Iniciar sesion como Administrador",
       "Log in as Employee": "Iniciar sesion como Empleado",
       "Log in": "Iniciar sesion",
@@ -13,5 +13,5 @@ String lang(String key, {String? lang}) {
     "en": {}
   };
 
-  return map[l]?[key] ?? key;
+  return map[l]?[key]?.trim() ?? key.trim();
 }
