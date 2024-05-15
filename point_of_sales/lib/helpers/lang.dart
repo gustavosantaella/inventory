@@ -1,5 +1,5 @@
-lang(String key, {String lang = "es"}) {
-  Map<String, dynamic> map = {
+String lang(String key, {String lang = "es"}) {
+  Map<String, Map<String, String>> map = {
     "es": {
       "Easy Management for your Store": "Facil de manejar para tu local ",
       "Log in as Owner": "Iniciar sesion como Administrador",
