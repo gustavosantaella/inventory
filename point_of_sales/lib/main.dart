@@ -1,11 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:point_of_sales/modules/login_or_sigin/screens/login_or_sigin.dart';
+import 'package:point_of_sales/modules/auth/screens/login_or_sigin.dart';
 
 void main() {
   DartPluginRegistrant.ensureInitialized();
-  
+
   runApp(const MyApp());
 }
 
