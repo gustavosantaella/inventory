@@ -7,6 +7,7 @@ class _ConstColors {
 
 class ConstApp {
   static String appName = "SoftPOS";
+  static double padding = 4;
 
   static _ConstColors colors() {
     return _ConstColors();
