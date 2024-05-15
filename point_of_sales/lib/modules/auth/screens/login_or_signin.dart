@@ -28,18 +28,16 @@ class _LoginOrSigingState extends State<LoginOrSigin> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const SizedBox(height: 5),
-                      Wrap(
-                        alignment: WrapAlignment.center,
-                        runAlignment: WrapAlignment.center,
+                      Column(
                         children: [
+                          // const SizedBox(height: 15),
                           SvgPicture.asset(
                             "assets/2.svg",
-                            height: 100,
-                            width: 600,
+                            height: 133,
+                            width: 133,
                           ),
                           Text(
-                            "${ConstApp.appName}.",
+                            ConstApp.appName,
                             style: TextStyle(
                                 color: ConstApp.colors().blue,
                                 fontSize: 37,
@@ -47,13 +45,13 @@ class _LoginOrSigingState extends State<LoginOrSigin> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 80),
+                      const SizedBox(height: 10),
                       SvgPicture.asset(
                         "assets/1.svg",
                       ),
                       const SizedBox(height: 40),
                       Text(
-                        lang("Easy Management for your Store"),
+                        "${lang("Easy Management for your Store")}.",
                         style: TextStyle(color: ConstApp.colors().black1),
                       ),
                       const SizedBox(height: 88),
@@ -74,7 +72,10 @@ class _LoginOrSigingState extends State<LoginOrSigin> {
                               style: buttonStyle(
                                   color: Colors.white,
                                   borderColor: ConstApp.colors().blue),
-                              onPressed: () async {},
+                              onPressed: () async {
+                                await Navigator.pushNamed(context, "/login");
+                                print(123);
+                              },
                               child: Text(lang("Log in"),
                                   style: TextStyle(
                                       color: ConstApp.colors().blue)))),
