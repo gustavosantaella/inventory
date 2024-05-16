@@ -89,7 +89,10 @@ class _LoginAsOwnerOrEmployeeState extends State<LoginAsOwnerOrEmployee> {
                 ),
                 const SizedBox(height: 12),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      await Navigator.pushNamed(context, "/login-as",
+                          arguments: {"type": "Employee"});
+                    },
                     style: buttonStyle(borderRadius: 15),
                     child: Padding(
                       padding: const EdgeInsets.all(10),
