@@ -3,6 +3,7 @@ import 'package:point_of_sales/config/constants.dart';
 import 'package:point_of_sales/helpers/lang.dart';
 import 'package:point_of_sales/helpers/styles/text.dart';
 import 'package:point_of_sales/widgets/app_bar_back_button.dart';
+import 'package:point_of_sales/widgets/input.dart';
 
 class LoginAs extends StatefulWidget {
   const LoginAs({super.key});
@@ -18,6 +19,9 @@ class _LoginAsState extends State<LoginAs> {
   initState() {
     super.initState();
   }
+
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +42,17 @@ class _LoginAsState extends State<LoginAs> {
             child: SafeArea(
                 child: Padding(
                     padding: EdgeInsets.all(ConstApp.padding),
-                    child: Text("hola")))));
+                    child: Column(children: [
+                      POSInput(
+                        errorText: null,
+                        label: lang("Employee code"),
+                        controller: usernameController,
+                      ),
+                      POSInput(
+                        errorText: null,
+                        label: lang("Password"),
+                        controller: passwordController,
+                      )
+                    ])))));
   }
 }
