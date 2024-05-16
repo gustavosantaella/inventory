@@ -12,7 +12,7 @@ class _Lang {
 
 class ConstApp {
   static String appName = "SoftPOS";
-  static double padding = 4;
+  static double padding = 5.5;
   static _Lang lang = _Lang();
 
   static _ConstColors colors() {

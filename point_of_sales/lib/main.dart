@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:point_of_sales/modules/auth/screens/login_or_signin.dart';
+import 'package:point_of_sales/modules/auth/screens/login_as_owner_or_employee.dart';
 
 void main() {
   DartPluginRegistrant.ensureInitialized();
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/login-signin',
       routes: {
         "/login-signin": (context) => const LoginOrSigin(),
-        "/login": (context) => const Text("hola")
+        "/login": (context) => const LoginAsOwnerOrEmployee()
       },
     );
   }
