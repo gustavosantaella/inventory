@@ -62,7 +62,10 @@ class _LoginAsOwnerOrEmployeeState extends State<LoginAsOwnerOrEmployee> {
                 SvgPicture.asset("assets/3.svg"),
                 const SizedBox(height: 50),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/login-as",
+                        arguments: {"type": "Owner"});
+                  },
                   style: buttonStyle(borderRadius: 15),
                   child: Padding(
                     padding: const EdgeInsets.all(10),

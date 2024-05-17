@@ -65,21 +65,26 @@ class _LoginAsState extends State<LoginAs> {
                           child: buttonText(
                               text: lang("Log in"), onPressed: () {})),
                       height(40),
-                      Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
-                          color: ConstApp.colors().blue2,
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          lang(
-                              "Use the cashier code that can be created by the Owner in Manage Store -> Cashier Code"),
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 16),
-                        ),
-                      )
+                      Builder(builder: (contex) {
+                        if (args["type"] != 'Owner') {
+                          return Container(
+                            padding: const EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(10)),
+                              color: ConstApp.colors().blue2,
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              lang(
+                                  "Use the cashier code that can be created by the Owner in Manage Store -> Cashier Code"),
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.w400, fontSize: 16),
+                            ),
+                          );
+                        }
+                        return Container();
+                      })
                     ])))));
   }
 }
