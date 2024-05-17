@@ -8,9 +8,11 @@ TextStyle buttonTextStyle() {
       color: Colors.white, fontWeight: FontWeight.w500, fontSize: 16);
 }
 
-SizedBox buttonText({required String text, required VoidCallback onPressed}) {
+SizedBox buttonText(
+    {required String text, required VoidCallback onPressed, double? width}) {
   return SizedBox(
     height: 57,
+    width: width,
     child: TextButton(
         style: buttonStyle(),
         onPressed: onPressed,

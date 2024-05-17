@@ -6,14 +6,21 @@ class POSInput extends StatefulWidget {
   final TextEditingController? controller;
   final String? errorText;
   final String? label;
+  final IconData? prefixIcon;
+  final IconData? suffixIcon;
+  final VoidCallback? suffixIconOnPressed;
   final bool? obscureText;
 
-  const POSInput(
-      {super.key,
-      this.controller,
-      this.errorText,
-      this.label,
-      this.obscureText});
+  const POSInput({
+    super.key,
+    this.controller,
+    this.errorText,
+    this.label,
+    this.obscureText,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.suffixIconOnPressed,
+  });
 
   @override
   State<StatefulWidget> createState() => _InputState();
@@ -25,6 +32,13 @@ class _InputState extends State<POSInput> {
     return TextFormField(
       obscureText: widget.obscureText ?? false,
       decoration: InputDecoration(
+          suffixIcon: widget.suffixIcon != null
+              ? IconButton(
+                  onPressed: widget.suffixIconOnPressed,
+                  icon: Icon(widget.suffixIcon))
+              : null,
+          prefixIcon:
+              widget.prefixIcon != null ? Icon(widget.prefixIcon) : null,
           errorText: widget.errorText,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.0),
@@ -33,7 +47,7 @@ class _InputState extends State<POSInput> {
                 width: 1.0,
               )),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25.0),
+            borderRadius: BorderRadius.circular(10.0),
             borderSide: BorderSide(
               color: ConstApp.colors().blue,
             ),

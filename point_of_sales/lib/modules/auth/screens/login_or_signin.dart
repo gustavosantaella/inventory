@@ -71,7 +71,9 @@ class _LoginOrSigingState extends State<LoginOrSigin> {
                           height: 57,
                           child: TextButton(
                               style: buttonStyle(),
-                              onPressed: () async {},
+                              onPressed: () async {
+                                await Navigator.pushNamed(context, "/register");
+                              },
                               child: Text(lang("Create new account"),
                                   style:
                                       const TextStyle(color: Colors.white)))),
