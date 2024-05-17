@@ -9,6 +9,7 @@ import 'package:point_of_sales/helpers/styles/button_text.dart';
 import 'package:point_of_sales/helpers/styles/text.dart';
 import 'package:point_of_sales/widgets/app_bar_back_button.dart';
 import 'package:point_of_sales/widgets/input.dart';
+import 'package:point_of_sales/widgets/line.dart';
 
 class LoginAs extends StatefulWidget {
   const LoginAs({super.key});
@@ -51,6 +52,15 @@ class _LoginAsState extends State<LoginAs> {
                       SvgPicture.asset(
                         "assets/4.svg",
                       ),
+                      Wrap(
+                        spacing: 10,
+                        children: [
+                          line(),
+                          line(color: ConstApp.colors().blue),
+                          line(),
+                        ],
+                      ),
+                      height(20),
                       POSInput(
                         errorText: null,
                         label: lang("Employee code or username"),
