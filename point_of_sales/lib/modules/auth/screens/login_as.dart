@@ -50,7 +50,7 @@ class _LoginAsState extends State<LoginAs> {
                       height(62),
                       POSInput(
                         errorText: null,
-                        label: lang("Employee code"),
+                        label: lang("Employee code or username"),
                         controller: usernameController,
                       ),
                       height(49),
