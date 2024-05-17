@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:point_of_sales/config/constants.dart';
 import 'package:point_of_sales/helpers/height.dart';
 import 'package:point_of_sales/helpers/lang.dart';
@@ -47,7 +48,9 @@ class _LoginAsState extends State<LoginAs> {
                 child: Padding(
                     padding: EdgeInsets.all(ConstApp.padding),
                     child: Column(children: [
-                      height(62),
+                      SvgPicture.asset(
+                        "assets/4.svg",
+                      ),
                       POSInput(
                         errorText: null,
                         label: lang("Employee code or username"),
