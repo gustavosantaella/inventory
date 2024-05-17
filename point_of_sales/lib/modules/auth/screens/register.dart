@@ -41,9 +41,8 @@ class _Register extends State<Register> {
           padding: EdgeInsets.all(ConstApp.padding),
           child: Column(
             children: [
-              height(44),
-              SvgPicture.asset("assets/3.svg"),
-              height(44),
+              SvgPicture.asset("assets/4.svg"),
+              height(5),
               POSInput(
                 label: lang("Username"),
               ),
