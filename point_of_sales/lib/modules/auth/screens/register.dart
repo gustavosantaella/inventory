@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:point_of_sales/config/constants.dart';
 import 'package:point_of_sales/helpers/height.dart';
 import 'package:point_of_sales/helpers/lang.dart';
@@ -8,6 +10,7 @@ import 'package:point_of_sales/helpers/styles/text.dart';
 import 'package:point_of_sales/widgets/ads/main_ad.dart';
 import 'package:point_of_sales/widgets/app_bar_back_button.dart';
 import 'package:point_of_sales/widgets/input.dart';
+import 'package:point_of_sales/widgets/line.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -39,6 +42,8 @@ class _Register extends State<Register> {
           child: Column(
             children: [
               height(44),
+              SvgPicture.asset("assets/3.svg"),
+              height(44),
               POSInput(
                 label: lang("Username"),
               ),
@@ -59,7 +64,16 @@ class _Register extends State<Register> {
                   text: lang("Submit"),
                   onPressed: () async {
                     await Navigator.popAndPushNamed(context, "/home");
-                  })
+                  }),
+              height(40),
+              Wrap(
+                spacing: 10,
+                children: [
+                  line(),
+                  line(),
+                  line(),
+                ],
+              )
             ],
           ),
         ),

@@ -5,3 +5,9 @@ SizedBox height(double height) {
     height: height,
   );
 }
+
+SizedBox width(double width) {
+  return SizedBox(
+    width: width,
+  );
+}
