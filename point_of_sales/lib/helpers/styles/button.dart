@@ -5,7 +5,7 @@ buttonStyle({double? borderRadius, Color? color, Color? borderColor}) {
   return ButtonStyle(
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 18.0),
+              borderRadius: BorderRadius.circular(borderRadius ?? 10.0),
               side: BorderSide(color: borderColor ?? ConstApp.colors().blue))),
       backgroundColor:
           MaterialStatePropertyAll(color ?? ConstApp.colors().blue));
