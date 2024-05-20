@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from './modules/auth/auth.module';
-import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
+import MongoModule from './database/mongo/mongo.module';
+import { UserService } from './modules/users/user.service';
+import { UserModule } from './modules/users/user.module';
 
 @Module({
-  imports: [
-    AuthModule,
-    MongooseModule.forRoot('mongodb://localhost:27017/inventory'),
-  ],
+  imports: [ConfigModule.forRoot(), MongoModule, AuthModule, UserModule],
   exports: [],
-  providers: [],
+  providers: [UserService],
 })
 export class AppModule {}
