@@ -3,7 +3,8 @@ import 'package:point_of_sales/config/constants.dart';
 
 class SoftPOS extends StatefulWidget {
   final Widget child;
-  const SoftPOS({super.key, required this.child});
+  final double? padding;
+  const SoftPOS({super.key, required this.child, this.padding});
 
   @override
   State<StatefulWidget> createState() {
@@ -16,7 +17,7 @@ class _SoftPOS extends State<SoftPOS> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Padding(
-      padding: EdgeInsets.all(ConstApp.padding),
+      padding: EdgeInsets.all(widget.padding ?? ConstApp.padding),
       child: widget.child,
     ));
   }

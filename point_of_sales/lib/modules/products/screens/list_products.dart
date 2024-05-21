@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:point_of_sales/config/constants.dart';
 import 'package:point_of_sales/helpers/lang.dart';
 import 'package:point_of_sales/helpers/styles/text.dart';
@@ -30,8 +33,50 @@ class _ListProductState extends State<ListProductScreen> {
         ),
       ),
       body: SoftPOS(
-        child: Container(),
-      ),
+          padding: 0,
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    border: Border(
+                        top: BorderSide(color: ConstApp.colors().grey1),
+                        bottom: BorderSide(color: ConstApp.colors().grey1))),
+                width: MediaQuery.of(context).size.width,
+                height: 56,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: TextField(),
+                    ),
+                    Container(
+                      color: ConstApp.colors().grey1,
+                      padding: const EdgeInsets.all(1),
+                    ),
+                    Spacer(),
+                    Icon(Icons.search),
+                    Spacer(),
+                    Container(
+                      color: ConstApp.colors().grey1,
+                      padding: const EdgeInsets.all(1),
+                    ),
+                    Spacer(),
+                    Icon(Icons.add),
+                    Spacer(),
+                    Container(
+                      color: ConstApp.colors().grey1,
+                      padding: const EdgeInsets.all(1),
+                    ),
+                    Spacer(),
+                    Icon(Icons.tab),
+                    Spacer(),
+                  ],
+                ),
+              )
+            ],
+          )),
     );
   }
 }
