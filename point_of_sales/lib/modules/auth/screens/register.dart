@@ -7,7 +7,7 @@ import 'package:point_of_sales/helpers/lang.dart';
 import 'package:point_of_sales/helpers/styles/button.dart';
 import 'package:point_of_sales/helpers/styles/button_text.dart';
 import 'package:point_of_sales/helpers/styles/text.dart';
-import 'package:point_of_sales/widgets/ads/main_ad.dart';
+import 'package:point_of_sales/widgets/SoftPOS.dart';
 import 'package:point_of_sales/widgets/app_bar_back_button.dart';
 import 'package:point_of_sales/widgets/input.dart';
 import 'package:point_of_sales/widgets/line.dart';
@@ -22,6 +22,10 @@ class Register extends StatefulWidget {
 }
 
 class _Register extends State<Register> {
+  submit() async {
+    await Navigator.popAndPushNamed(context, "/home");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +39,7 @@ class _Register extends State<Register> {
           Navigator.pop(context);
         }),
       ),
-      body: POSAd(
+      body: SoftPOS(
           child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(ConstApp.padding),
@@ -61,9 +65,7 @@ class _Register extends State<Register> {
               buttonText(
                   width: double.infinity,
                   text: lang("Submit"),
-                  onPressed: () async {
-                    await Navigator.popAndPushNamed(context, "/home");
-                  }),
+                  onPressed: submit),
               height(40),
               Wrap(
                 spacing: 10,

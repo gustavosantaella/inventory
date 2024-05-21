@@ -5,6 +5,7 @@ import 'package:point_of_sales/modules/auth/screens/login_or_signin.dart';
 import 'package:point_of_sales/modules/auth/screens/login_as_owner_or_employee.dart';
 import 'package:point_of_sales/modules/auth/screens/login_as.dart';
 import 'package:point_of_sales/modules/auth/screens/register.dart';
+import 'package:point_of_sales/modules/products/screens/list_products.dart';
 
 void main() {
   DartPluginRegistrant.ensureInitialized();
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
         "/login": (context) => const LoginAsOwnerOrEmployee(),
         "/login-as": (context) => const LoginAs(),
         "/register": (context) => const Register(),
-        "/home": (context) => const Register(),
+        "/home": (context) => const ListProductScreen(),
         "/customers": (context) => const Register(),
       },
     );
