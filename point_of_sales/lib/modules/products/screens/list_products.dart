@@ -23,6 +23,23 @@ class _ListProductState extends State<ListProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: NavigationBar(
+        destinations: const <Widget>[
+          NavigationDestination(
+            icon: Icon(Icons.explore),
+            label: 'Explore',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.commute),
+            label: 'Commute',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.bookmark),
+            icon: Icon(Icons.bookmark_border),
+            label: 'Saved',
+          ),
+        ],
+      ),
       drawer: Drawer(
         child: Container(),
       ),
@@ -61,6 +78,30 @@ class _ListProductState extends State<ListProductScreen> {
                                 color: ConstApp.colors().blue,
                                 fontWeight: FontWeight.w500,
                                 fontSize: 24),
+                          ),
+                        ],
+                      ),
+                    ),
+                    ProductCardWidget(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.network(
+                              "https://www.shutterstock.com/image-photo/homemade-hamburger-fresh-vegetables-260nw-337714676.jpg"),
+                          Text(
+                            "BIG BURGER",
+                            style: TextStyle(
+                                color: ConstApp.colors().blue,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16),
+                          ),
+                          const Spacer(),
+                          Text(
+                            "\$25.867",
+                            style: TextStyle(
+                                color: ConstApp.colors().blue,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16),
                           ),
                         ],
                       ),
