@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:point_of_sales/config/constants.dart';
 import 'package:point_of_sales/helpers/lang.dart';
 import 'package:point_of_sales/helpers/styles/text.dart';
+import 'package:point_of_sales/modules/products/widgets/card_product_widget.dart';
+import 'package:point_of_sales/modules/products/widgets/product_searchable_row.dart';
 import 'package:point_of_sales/widgets/SoftPOS.dart';
 import 'package:point_of_sales/widgets/app_bar_back_button.dart';
 
@@ -36,42 +38,43 @@ class _ListProductState extends State<ListProductScreen> {
           padding: 0,
           child: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                    border: Border(
-                        top: BorderSide(color: ConstApp.colors().grey1),
-                        bottom: BorderSide(color: ConstApp.colors().grey1))),
-                width: MediaQuery.of(context).size.width,
-                height: 56,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
+              const ProductSerchableRowWidget(),
+              Padding(
+                padding: EdgeInsets.all(ConstApp.padding),
+                child: Wrap(
                   children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 2,
-                      child: TextField(),
-                    ),
                     Container(
-                      color: ConstApp.colors().grey1,
-                      padding: const EdgeInsets.all(1),
+                      width: 152,
+                      height: 182,
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(1, 1),
+                                blurRadius: 10),
+                          ]),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.add,
+                            size: 44,
+                            color: ConstApp.colors().blue,
+                          ),
+                          Text(
+                            lang("Add"),
+                            style: TextStyle(
+                                color: ConstApp.colors().blue,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 24),
+                          ),
+                        ],
+                      ),
                     ),
-                    Spacer(),
-                    Icon(Icons.search),
-                    Spacer(),
-                    Container(
-                      color: ConstApp.colors().grey1,
-                      padding: const EdgeInsets.all(1),
-                    ),
-                    Spacer(),
-                    Icon(Icons.add),
-                    Spacer(),
-                    Container(
-                      color: ConstApp.colors().grey1,
-                      padding: const EdgeInsets.all(1),
-                    ),
-                    Spacer(),
-                    Icon(Icons.tab),
-                    Spacer(),
+                    ProductCardWidget()
                   ],
                 ),
               )
