@@ -42,19 +42,10 @@ class _ListProductState extends State<ListProductScreen> {
               Padding(
                 padding: EdgeInsets.all(ConstApp.padding),
                 child: Wrap(
+                  spacing: 50,
+                  runSpacing: 30,
                   children: [
-                    Container(
-                      width: 152,
-                      height: 182,
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey,
-                                offset: Offset(1, 1),
-                                blurRadius: 10),
-                          ]),
+                    ProductCardWidget(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +65,6 @@ class _ListProductState extends State<ListProductScreen> {
                         ],
                       ),
                     ),
-                    ProductCardWidget()
                   ],
                 ),
               )
