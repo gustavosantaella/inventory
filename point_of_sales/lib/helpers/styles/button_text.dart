@@ -9,16 +9,20 @@ TextStyle buttonTextStyle() {
 }
 
 SizedBox buttonText(
-    {required String text, required VoidCallback onPressed, double? width}) {
+    {String? text,
+    Widget? widget,
+    required VoidCallback onPressed,
+    double? width}) {
   return SizedBox(
     height: 57,
     width: width,
     child: TextButton(
         style: buttonStyle(),
         onPressed: onPressed,
-        child: Text(
-          style: buttonTextStyle(),
-          text,
-        )),
+        child: widget ??
+            Text(
+              text ?? "",
+              style: buttonTextStyle(),
+            )),
   );
 }
